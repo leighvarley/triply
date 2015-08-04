@@ -1,9 +1,7 @@
 <h1>Recommendations</h1>
-
+<%#=think of replacing . with 's - eg the recommendation's location's city name%>
 <% @recommendations.each do |recommendation| %>
-  <h4>
-    Location: <%= recommendation.location.city_name %>
-    User: <%= recommendation.user.username %>
-    Body: <%= recommendation.body %>
-  </h4>
+    <p>Location: <%= recommendation.location.city_name %></p>
+    <p>User: <%= recommendation.user.username %></p>
+    <p><%= recommendation.body %></p>
 <% end %>

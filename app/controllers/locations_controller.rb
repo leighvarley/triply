@@ -9,8 +9,8 @@ class LocationsController < ApplicationController
 
   #show
   def show
-    #@location = Location.find(params[:id])
-    @location = Location.find_by(id: params[:id])
+    @location = Location.find(params[:id])
+    #@location = Location.find_by(id: params[:id]) - this does the same thing as line above (line above is a shortcut)
   end
 
 

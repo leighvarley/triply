@@ -1,0 +1,6 @@
+
+<% @location.recommendations.each do |recommendation| %>
+  <%= recommendation.body %>
+<% end %>
+
+<p><%= link_to 'Back', recommendations_path %><p>
