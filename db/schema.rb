@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150803235431) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
     t.string  "body"
     t.integer "recommendation_id"
   end
@@ -29,6 +30,9 @@ ActiveRecord::Schema.define(version: 20150803235431) do
   end
 
   create_table "recommendations", force: :cascade do |t|
+    t.string  "body"
+    t.integer "location_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
