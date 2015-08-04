@@ -2,8 +2,19 @@ class RecommendationsController < ApplicationController
 
 #index
 def index
-  @recommendation = Recommendation.all.order(:id).reverse
+  @recommendations = Recommendation.all.order(:id).reverse
+  #@recommendations = @location.Recommendation.all.order(:id).reverse
+end
+
+#new
+def new
+  @recommendation = Recommendation.new
 end
 
 
-end #of class
+
+
+
+
+
+end

@@ -1,9 +1,25 @@
 Rails.application.routes.draw do
 
-  resources :recommendations do
-    resources :comments
-  end
+root :to => "recommendations#index"
+
+resources :users do
+  resources :locations, only: [:index, :show]
 end
+
+resources :locations do
+  resources :recommendations, shallow: true
+end
+
+resources :recommendations do
+  resources :comments, only: [:index, :create, :new, :show, :destroy]
+end
+
+get '/signin', to: 'users#signin_prompt'
+post '/signin', to: 'users#signin'
+get '/signout', to: 'users#signout'
+
+end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

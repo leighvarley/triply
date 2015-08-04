@@ -1,6 +1,7 @@
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
+      t.integer :user_id
       t.string :body
       #t.integer :user_id   - don't need user_id or location_id b/c comment belongs to recommendation and recommendation has this info - pull it thru recommendation_id
       t.integer :recommendation_id

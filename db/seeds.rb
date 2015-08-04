@@ -9,9 +9,13 @@
 Recommendation.destroy_all
 Comment.destroy_all
 
+
+
 Atlanta = Location.create!(city_name: "Atlanta", state_name: "Georgia" country_name: "United States", photo_url: "")
 San_Francisco = Location.create!(city_name: "San Francisco", state_name: "California", country_name: "United States", phot_url: "")
+# leigh = Users.create!(name: "Leigh")
 
+Dr_Bombays = Recommendation.create!(body: "some text", user_id: leigh, location_id: Atlanta.id)
 Dr_Bombays = Atlanta.recommendation.create!(body: "Looking for a great place to post up and do some work, to read a book, or to catch up with a friend over a pot of tea? Check out Dr. Bombay's Underwater Tea Party!")
 Tea_Garden = San_Francisco.recommendation.create!(body: "The Japanese Tea Garden, a five acre garden within Golden Gate State Park is an awesome spot. Built in 1894 as part of the World's Fair, it is the oldest public tea garden in the United States.")
 
