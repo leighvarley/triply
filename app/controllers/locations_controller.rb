@@ -4,12 +4,11 @@ class LocationsController < ApplicationController
 
   #index
   def index
-    @locations = Locations.all
+    @locations = Location.all
   end
 
-  #new
-  def new
-    @location = Location.new
+  #show
+  def show
   end
 
 
