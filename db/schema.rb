@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150803235431) do
   end
 
   create_table "recommendations", force: :cascade do |t|
+    t.string  "recommended_place"
     t.string  "body"
     t.integer "location_id"
     t.integer "user_id"

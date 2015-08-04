@@ -1,6 +1,9 @@
 
 <% @location.recommendations.each do |recommendation| %>
-  <%= recommendation.body %>
+  <p>Recommended Place: <%= recommendation.recommended_place %></p>
+  <p>Location: <%= recommendation.location.city_name %></p>
+  <p>User: <%= recommendation.user.username %></p>
+  <p><%= recommendation.body %></p>
 <% end %>
 
 <p><%= link_to 'Back', recommendations_path %><p>
