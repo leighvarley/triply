@@ -1,13 +1,9 @@
-<h1><%= @locations.city_name %>, <%= @locations.state_name %>, <%= @locations.country_name %></h1>
+<h1><%= @location.city_name %>, <%= @location.state_name %>, <%= @location.country_name %></h1>
 
 
-<% @recommendations = [] %>
-<% Recommendation.all.each do |recommendation| %>
-  <% if recommendation.location_id == @location.id %>
-    <% @recommendation.push(recommendation) %>
-  <% end %>
+<%# @recommendations = [] %>
+<% @location.recommendations.each do |recommendation| %>
+  <%= recommendation.body %>
 <% end %>
-
-
 
 <p><%= link_to 'Back', locations_path %><p>
