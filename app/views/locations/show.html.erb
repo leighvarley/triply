@@ -1,6 +1,13 @@
 <h1><%= @locations.city_name %>, <%= @locations.state_name %>, <%= @locations.country_name %></h1>
 
 
+<% @recommendations = [] %>
+<% Recommendation.all.each do |recommendation| %>
+  <% if recommendation.location_id == @location.id %>
+    <% @recommendation.push(recommendation) %>
+  <% end %>
+<% end %>
+
 
 
 <p><%= link_to 'Back', locations_path %><p>

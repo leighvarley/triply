@@ -1,1 +1,7 @@
+<h1>Recommendations</h1>
 
+<% @recommendations.each do |recommendation| %>
+  <h4><%= recommendation.user_id %></h4>
+  <h4><%= recommendation.location_id %></h4>
+  <h4><%= recommendation.body %></h4>
+<% end %>
