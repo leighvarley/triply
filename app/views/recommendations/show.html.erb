@@ -1,9 +1,5 @@
+<h2><%= @recommendation.recommended_place %></h2>
 
-<% @location.recommendations.each do |recommendation| %>
-  <p>Recommended Place: <%= recommendation.recommended_place %></p>
-  <p>Location: <%= recommendation.location.city_name %></p>
-  <p>User: <%= User.find(recommendation.user_id) %></p>
-  <p><%= recommendation.body %></p>
-<% end %>
+<p><%= @recommendation.body %><p>
 
-<p><%= link_to "Back", location_recommendations_path %></p>
+<p><%= link_to "(edit)", edit_location_recommendation_path(@location, @recommendation) %></p>

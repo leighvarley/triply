@@ -4,7 +4,7 @@
 <%# @recommendations = [] %>
 <% @location.recommendations.each do |recommendation| %>
   <p>
-    <%= link_to recommendation.body, location_recommendation_path(@location, recommendation) %>
+    <%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %>
   </p>
 <% end %>
 
