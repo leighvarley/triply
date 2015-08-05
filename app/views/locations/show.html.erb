@@ -4,11 +4,13 @@
 <%# @recommendations = [] %>
 <% @location.recommendations.each do |recommendation| %>
   <p>
-    <%= recommendation.body %>
-    <%#= link_to 'Edit', edit_location_recommendation_path(@location, recommendation) %>
+    <%= link_to recommendation.body, location_recommendation_path(@location, recommendation) %>
   </p>
 <% end %>
 
 <%# = render partial: 'recommendations/form' %>
-<p><%= link_to 'New Recommendation', new_location_recommendation_path(@location, @recommendation) %></p>
+<p><%= link_to 'New Recommendation', new_location_recommendation_path(@location) %></p>
+
+<p><%#= link_to 'Edit', edit_location_recommendation_path(@location, @recommendation, method: :get) %></p>
+
 <p><%= link_to 'Back', locations_path %><p>
