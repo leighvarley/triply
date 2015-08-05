@@ -2,4 +2,6 @@
 
 <p><%= @recommendation.body %><p>
 
-<p><%= link_to "(edit)", edit_location_recommendation_path(@location, @recommendation) %></p>
+<p><%= link_to "Edit", edit_location_recommendation_path(@location, @recommendation) %></p>
+
+<p><%= link_to "Delete", location_recommendation_path(@location, @recommendation), method: :delete %></p>

@@ -48,7 +48,18 @@ class RecommendationsController < ApplicationController
     @location = Location.find(params[:location_id])
     @recommendation.update(recommendation_params.merge(location: @location))
     redirect_to location_path(@location)
-end
+  end
+
+  #destroy
+  def destroy
+    @location = params[:location_id]
+    @recommendation = Recommendation.find(params[:id])
+    @recommendation.destroy
+    #@recommendation = Recommendation.find(params[:id])
+    #@location = Location.find(params[:location_id])
+    #@location.recommendation.destroy
+    redirect_to location_path(@location)
+  end
 
   private
     def recommendation_params
