@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-root :to => "locations#index"
+  get 'welcome/index'
+
+root :to => "welcome#index"
 
 # resources :users do
 #   resources :locations, only: [:index, :show]
