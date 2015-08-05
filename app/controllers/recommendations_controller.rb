@@ -9,6 +9,13 @@ class RecommendationsController < ApplicationController
     #@recommendations = @location.Recommendation.all.order(:id).reverse
   end
 
+  #create
+  def create
+    #save username when recommendation is added
+    @recommendation = Recommendation.create!(recommendation_params.merge({user_id: session[:user]["id"]}))
+    redirect_to recommendation_path(@recommendation)
+  end
+
   #new
   def new
     @recommendation = Recommendation.new
@@ -20,11 +27,14 @@ class RecommendationsController < ApplicationController
     @location = @recommendation.location
   end
 
-  #create
-  def create
-    #save username when recommendation is added
-    @recommendation = Recommendation.create!(recommendation_params.merge({user_id: session[:user]["id"]}))
-    redirect_to recommendation_path(@recommendation)
+  #edit
+  def edit
+    @recommendation = Recommendation.find(params[:id])
   end
+
+
+
+
+
 
 end

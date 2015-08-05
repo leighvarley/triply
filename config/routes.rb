@@ -7,7 +7,7 @@ resources :users do
 end
 
 resources :locations do
-  resources :recommendations, shallow: true
+  resources :recommendations
 end
 
 resources :recommendations do
