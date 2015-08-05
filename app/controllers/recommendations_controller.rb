@@ -23,9 +23,11 @@ class RecommendationsController < ApplicationController
     #@recommendation = Recommendation.find(params[:id])
     #@location = @recommendation.location
     @location = Location.find(params[:location_id])
-    @recommendation = @location.recommendations.create!(recommendation_params)
+    @recommendation = @location.recommendations.create!(recommendation_params.merge({
+      user_id: session[:user]["id"]
+      }))
     #@recommendation = @location.recommendations.create!(location_recommendation_params)
-    redirect_to location_recommendations_path(@location, @recommendation)
+    redirect_to location_path(@location)
   end
 
   #show

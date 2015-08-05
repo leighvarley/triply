@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
 
-root :to => "recommendations#index"
+root :to => "locations#index"
 
-resources :users do
-  resources :locations, only: [:index, :show]
-end
+# resources :users do
+#   resources :locations, only: [:index, :show]
+# end
 
 resources :locations do
   resources :recommendations
 end
 
-resources :recommendations do
-  resources :comments, only: [:index, :create, :new, :show, :destroy]
-end
+# resources :recommendations do
+#   resources :comments, only: [:index, :create, :new, :show, :destroy]
+# end
 
 get '/signin', to: 'users#signin_prompt'
 post '/signin', to: 'users#signin'
