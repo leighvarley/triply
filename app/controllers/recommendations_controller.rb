@@ -45,6 +45,9 @@ class RecommendationsController < ApplicationController
   #update
   def update
     @recommendation = Recommendation.find(params[:id])
+    @location = Location.find(params[:location_id])
+    @recommendation.update(recommendation_params.merge(location: @location))
+    redirect_to location_path(@location)
 end
 
   private
