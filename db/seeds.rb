@@ -11,12 +11,12 @@ Location.destroy_all
 Recommendation.destroy_all
 Comment.destroy_all
 
-Morgan = User.create!(name: "Morgan Rote", email: "roti@gmail.com", username: "morganrote", password_digest: "peanutbutter&jelly")
-Sarah = User.create!(name: "Sarah Lavatai", email: "slava@gmail.com", username: "sarahlavatai", password_digest: "milk&cookies")
-Leanne = User.create!(name: "Leanne Naramore", email: "leannimal@yahoo.com", username: "leannenaramore", password_digest: "crunchygranola")
-Lindsey = User.create!(name: "Lindsey Brock", email: "lkdb@aol.com", username: "lindseybrock", password_digest: "ashevilleawesome")
-Grayson = User.create!(name: "Grayson Hill", email: "ghill@bellsouth.net", username: "graysonhill", password_digest: "iamgraysonroberts")
-Lucas = User.create!(name: "Lucas Tower", email: "ltower@gmail.com", username: "lucastower", password_digest: "honeybees")
+Morgan = User.create!(name: "Morgan Rote", email: "roti@gmail.com")
+Sarah = User.create!(name: "Sarah Lavatai", email: "slava@gmail.com")
+Leanne = User.create!(name: "Leanne Naramore", email: "leannimal@yahoo.com")
+Lindsey = User.create!(name: "Lindsey Brock", email: "lkdb@aol.com")
+Grayson = User.create!(name: "Grayson Hill", email: "ghill@bellsouth.net")
+Lucas = User.create!(name: "Lucas Tower", email: "ltower@gmail.com")
 
 Asheville = Location.create!(city_name: "Asheville", state_name: "North Carolina")
 Atlanta = Location.create!(city_name: "Atlanta", state_name: "Georgia")

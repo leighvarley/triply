@@ -36,15 +36,6 @@ textarea {
   resize: vertical;
 }
 
-//dot indicates that the rule styles the entire class
-//can combine nested .center rules commented out with condensed rule below using Sass
-// .center {
-//   text-align: center;
-// }
-//
-// .center h1 {
-//   margin-bottom: 10px;
-// }
 .center {
   text-align: center;
   h1 {
@@ -81,8 +72,6 @@ p {
 
 /* header */
 
-//used Sass to combine #logo and #logo:hover rules into one block
-//in SCSS use '&' to replace second instance of '#logo'
 #logo {
   float: left;
   margin-right: 10px;
@@ -109,6 +98,21 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
 
 /* sidebar */
