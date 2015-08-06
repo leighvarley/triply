@@ -1,7 +1,8 @@
 <h2><%= @recommendation.recommended_place %></h2>
 
-<p><%= @recommendation.body %><p>
+<p><%= @recommendation.body %></p>
 
-<p><%= link_to "Edit", edit_location_recommendation_path(@location, @recommendation) %></p>
 
-<p><%= link_to "Delete", location_recommendation_path(@location, @recommendation), method: :delete, data: {confirm: "Are you sure?"} %></p>
+<p><%= link_to "Edit", edit_location_recommendation_path(@location, @recommendation), class: "btn btn btn-primary" %></p>
+
+<p><%= link_to "Delete", location_recommendation_path(@location, @recommendation), method: :delete, class: "btn btn btn-primary", data: {confirm: "Are you sure?"} %></p>

@@ -1,4 +1,4 @@
-<h1><%= @location.city_name %>, <%= @location.state_name %>, <%= @location.country_name %></h1>
+<h1><%= @location.city_name %>, <%= @location.state_name %></h1>
 
 
 <%# @recommendations = [] %>
@@ -9,8 +9,6 @@
 <% end %>
 
 <%# = render partial: 'recommendations/form' %>
-<p><%= link_to 'New Recommendation', new_location_recommendation_path(@location) %></p>
+<p><%= link_to 'New Recommendation', new_location_recommendation_path(@location), class: "btn btn btn-primary" %></p>
 
 <p><%#= link_to 'Edit', edit_location_recommendation_path(@location, @recommendation, method: :get) %></p>
-
-<p><%= link_to 'Back', locations_path %><p>

@@ -18,16 +18,15 @@ Lindsey = User.create!(username: "lindseydortch", password_digest: "ashevilleawe
 Grayson = User.create!(username: "graysonroberts", password_digest: "iamgraysonroberts")
 Lucas = User.create!(username: "lucastower", password_digest: "honeybees")
 
-Asheville = Location.create!(city_name: "Asheville", state_name: "North Carolina", country_name: "United States")
-Atlanta = Location.create!(city_name: "Atlanta", state_name: "Georgia", country_name: "United States")
-San_Francisco = Location.create!(city_name: "San Francisco", state_name: "California", country_name: "United States")
-Washington_DC = Location.create!(city_name: "Washington DC")
-Bozeman = Location.create!(city_name: "Bozeman", state_name: "Montana")
-New_York = Location.create!(city_name: "New York City", state_name: "New York")
+Asheville = Location.create!(city_name: "Asheville", state_name: "North Carolina")
+Atlanta = Location.create!(city_name: "Atlanta", state_name: "Georgia")
 Baltimore = Location.create!(city_name: "Baltimore", state_name: "Maryland")
-Portland = Location.create!(city_name: "Portland", state_name: "Oregon")
+Bozeman = Location.create!(city_name: "Bozeman", state_name: "Montana")
 Memphis = Location.create!(city_name: "Memphis", state_name: "Tennessee")
-
+New_York = Location.create!(city_name: "New York City", state_name: "New York")
+Portland = Location.create!(city_name: "Portland", state_name: "Oregon")
+San_Francisco = Location.create!(city_name: "San Francisco", state_name: "California")
+Washington_DC = Location.create!(city_name: "Washington", state_name: "DC")
 
 Dr_Bombays = Recommendation.create!(recommended_place: "Dr. Bombay's Underwater Tea Party", user_id: Sarah.id, location_id: Atlanta.id, body: "Looking for a great place to post up and do some work, to read a book, or to catch up with a friend over a pot of tea? Check out Dr. Bombay's Underwater Tea Party!")
 Piedmont_Park = Recommendation.create!(recommended_place: "Piedmont Park", user_id: Leanne.id, location_id: Atlanta.id, body: "Piedmont Park is a 189-acre park in the heart of Midtown. It's an awesome spot to hang out and relax. The park is walking distance to Trader Joe's as well as many restaurants - bring a blanket and a picnic! There is also a dog park as well as an outdoor pool, and there are frequently concerts and festivals at the park in the spring, fall, and summer.")
@@ -38,8 +37,4 @@ Edible_Park = Recommendation.create!(recommended_place: "George Washington Carve
 Jack_of_the_Wood = Recommendation.create!(recommended_place: "Jack of the Wood", user_id: Lindsey.id, location_id: Asheville.id, body: "Asheville is teeming with breweries, so it's touch to pick a favorite, but Jack of the Wood is definitely in my top five. Check out the live bluegrass jam sessions that take place every Thursday.")
 Sweet_Peas = Recommendation.create!(recommended_place: "Sweetpeas Hostel", user_id: Grayson.id, location_id: Asheville.id, body: "This place is a sweet deal. The hostel is clean and well-run, and it is in the heart of downtown Asheville. The people are cool and the prices run from about $25-$60/night depending on whether you have a private or shared room.")
 Arboretum = Recommendation.create!(recommended_place: "Arboretum", user_id: Lucas.id, location_id: Washington_DC.id, body: "This place is amazing - 446 aces of preserved land just 2 miles north of the Capitol building! If you live in NW DC and don't frequent the Arboretum, you are missing out!")
-Hyalite = Recommendation.create!(recommended_place: "Hyalite Canyon", user_id: Lucas.id, location_id: Bozeman.id, body: "Awesome hiking - and just 30 miles from Bozeman!)
-
-Dr_Bombays_comment1 = Comment.create!(user_id: Morgan.id, recommendation_id: Dr_Bombays.id, body: "Dr. Bombay's is my favorite coffee shop in Atlanta. It's located in Candler Park, there's free wi-fi, and the walls are lined with built in bookcases.")
-Dr_Bombays_comment2 = Comment.create!(user_id: Leanne.id, recommendation_id: Dr_Bombays.id, body: "The walls at Dr. Bombay's are lined with books that are for sale for just a dollar each. All proceeds from book sales benefit scholarship opportunities for young women in India.")
-Tea_Garden_comment1 = Comment.create!(user_id: Sarah.id, recommendation_id: Tea_Garden.id, body: "The Japaneese Tea Gardens are an awesome solace from the hustle and bustle of San Fran!")
+Hyalite = Recommendation.create!(recommended_place: "Hyalite Canyon", user_id: Lucas.id, location_id: Bozeman.id, body: "Awesome hiking - and just 30 miles from Bozeman!")
