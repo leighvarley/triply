@@ -3,8 +3,8 @@ class CreateRecommendations < ActiveRecord::Migration
     create_table :recommendations do |t|
       t.string :recommended_place
       t.string :body
-      t.references :location, index: true, foreign_key: true
-      t.references :user, index: true, foreign_key: true
+      t.references :location
+      t.references :user
     end
   end
 end
