@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150806220357) do
     t.string "city_name"
     t.string "state_name"
     t.string "country_name"
+    t.string "location_description"
     t.string "photo_url"
   end
 
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150806220357) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "password"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"

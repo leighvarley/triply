@@ -4,6 +4,7 @@ class CreateLocations < ActiveRecord::Migration
       t.string :city_name
       t.string :state_name
       t.string :country_name
+      t.string :location_description
       t.string :photo_url
     end
   end

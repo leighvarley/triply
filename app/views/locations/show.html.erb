@@ -1,5 +1,7 @@
+<div class="center jumbotron">
 <h1><%= @location.city_name %>, <%= @location.state_name %></h1>
-
+<p><%= @location.location_description %></p>
+</div>
 
 <%# @recommendations = [] %>
 <% @location.recommendations.each do |recommendation| %>

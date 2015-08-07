@@ -11,15 +11,15 @@ Location.destroy_all
 Recommendation.destroy_all
 Comment.destroy_all
 
-Morgan = User.create!(name: "Morgan Rote", email: "roti@gmail.com")
-Sarah = User.create!(name: "Sarah Lavatai", email: "slava@gmail.com")
-Leanne = User.create!(name: "Leanne Naramore", email: "leannimal@yahoo.com")
-Lindsey = User.create!(name: "Lindsey Brock", email: "lkdb@aol.com")
-Grayson = User.create!(name: "Grayson Hill", email: "ghill@bellsouth.net")
-Lucas = User.create!(name: "Lucas Tower", email: "ltower@gmail.com")
+Morgan = User.create!(name: "Morgan Rote", email: "roti@gmail.com", password: "peanutbutter&jelly")
+Sarah = User.create!(name: "Sarah Lavatai", email: "slava@gmail.com", password: "milk&cookies")
+Leanne = User.create!(name: "Leanne Naramore", email: "leannimal@yahoo.com", password: "crunchygranola")
+Lindsey = User.create!(name: "Lindsey Brock", email: "lkdb@aol.com", password: "ashevilleawesome")
+Grayson = User.create!(name: "Grayson Hill", email: "ghill@bellsouth.net", password: "iamgraysonroberts")
+Lucas = User.create!(name: "Lucas Tower", email: "ltower@gmail.com", password: "honeybees")
 
-Asheville = Location.create!(city_name: "Asheville", state_name: "North Carolina")
-Atlanta = Location.create!(city_name: "Atlanta", state_name: "Georgia")
+Asheville = Location.create!(city_name: "Asheville", state_name: "North Carolina", location_description:"Tucked between the Blue Ridge and Smoky Mountains, Asheville is teeming with mountain views, art, hiking, kayaking, microbreweries, and much more.")
+Atlanta = Location.create!(city_name: "Atlanta", state_name: "Georgia", location_description: "Originally established in 1837 at the intersection of two railroad lines, Atlanta remains the primary transportation hub of the Southeastern United States. Atlanta is known for its music and arts culture, shopping, dining, and more.")
 Baltimore = Location.create!(city_name: "Baltimore", state_name: "Maryland")
 Bozeman = Location.create!(city_name: "Bozeman", state_name: "Montana")
 Memphis = Location.create!(city_name: "Memphis", state_name: "Tennessee")

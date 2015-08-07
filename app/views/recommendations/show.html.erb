@@ -1,6 +1,9 @@
+<div class="center jumbotron">
 <h2><%= @recommendation.recommended_place %></h2>
-
 <p><%= @recommendation.body %></p>
+</div>
+
+
 
 
 <p><%= link_to "Edit", edit_location_recommendation_path(@location, @recommendation), class: "btn btn btn-primary" %></p>
