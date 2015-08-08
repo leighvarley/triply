@@ -12,7 +12,7 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-/* miscellaneous */
+/* development debug box */
 
 .debug_dump {
   clear: both;
@@ -152,15 +152,12 @@ footer {
       color: $gray-darker;
     }
   }
-  small {
-    float: left;
-  }
   ul {
-    float: right;
+    float: left;
     list-style: none;
     li {
       float: left;
-      margin-left: 15px;
+      margin-left: 5px;
     }
   }
 }
