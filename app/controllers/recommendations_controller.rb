@@ -1,5 +1,8 @@
 class RecommendationsController < ApplicationController
 
+
+before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
+
   #index
   def index
     @location = Location.find(params[:location_id])
