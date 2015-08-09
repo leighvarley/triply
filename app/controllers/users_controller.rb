@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      #log the user in as part of the sign up process
+      log_in @user
       flash[:success] = "Welcome to Triply!"
       redirect_to @user
     else

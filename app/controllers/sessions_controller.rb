@@ -25,6 +25,8 @@ class SessionsController < ApplicationController
 
   #logging out destroys the session (delete request to destroy action)
   def destroy
+    log_out
+    redirect_to root_url
   end
 
 end
