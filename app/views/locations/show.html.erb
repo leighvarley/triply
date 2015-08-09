@@ -3,14 +3,10 @@
 <p><%= @location.location_description %></p>
 </div>
 
-<%# @recommendations = [] %>
 <% @location.recommendations.each do |recommendation| %>
-  <p>
-    <%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %>
-  </p>
+  <p><%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %></p>
 <% end %>
 
-<%# = render partial: 'recommendations/form' %>
 <p><%= link_to 'New Recommendation', new_location_recommendation_path(@location), class: "btn btn btn-primary" %></p>
 
-<p><%#= link_to 'Edit', edit_location_recommendation_path(@location, @recommendation, method: :get) %></p>
+<p><%= link_to "Back", :back, class: "btn btn btn-primary" %></p>
