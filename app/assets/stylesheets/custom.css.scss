@@ -12,16 +12,6 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-/* development debug box */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
 /* universal */
 
 body {
@@ -94,7 +84,7 @@ input {
     margin: 0 0 30px 0;
   }
 }
-
+//Sass’s @extend function w/Bootstrap class has-error.
 .field_with_errors {
   @extend .has-error;
   .form-control {
@@ -153,7 +143,7 @@ footer {
     }
   }
   ul {
-    float: left;
+    float: right;
     list-style: none;
     li {
       float: left;
