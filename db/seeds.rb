@@ -9,7 +9,6 @@
 User.destroy_all
 Location.destroy_all
 Recommendation.destroy_all
-Comment.destroy_all
 
 Morgan = User.create!(name: "Morgan Rote", email: "roti@gmail.com", password: "peanutbutter&jelly")
 Sarah = User.create!(name: "Sarah Lavatai", email: "slava@gmail.com", password: "milk&cookies")
