@@ -1,6 +1,6 @@
 class RecommendationsController < ApplicationController
 
-before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+#before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 #before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
 
   #index
