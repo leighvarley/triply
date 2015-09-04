@@ -4,4 +4,6 @@
   <h4><%= link_to "#{recommendation.recommended_place}", recommendation %></h4>
 <% end %>
 
-<%= link_to 'new recommendation', new_location_recommendation_path %>
+<% if can? :create, @recommendation %>
+  <%= link_to 'new recommendation', new_location_recommendation_path %>
+<% end %>

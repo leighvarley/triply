@@ -1,6 +1,11 @@
 class RecommendationsController < ApplicationController
+  #load_and_authorize_resource :location
+  #load_and_authorize_resource :recommendation, :through => :location
 
 #before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
+
+#before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+#before_action :correct_user, only: [:new, :create, :edit, :update, :destroy]
 
   #index
   def index
@@ -39,6 +44,9 @@ class RecommendationsController < ApplicationController
   #update
   def update
     @recommendation = Recommendation.find(params[:id])
+    # if @recommendation.user_id != current_user.id
+    #   "Yer not authorized!"
+    # else
     @location = Location.find(params[:location_id])
     @recommendation.update(recommendation_params.merge(location: @location))
     redirect_to location_path(@location)
@@ -56,5 +64,10 @@ class RecommendationsController < ApplicationController
     def recommendation_params
       params.require(:recommendation).permit(:recommended_place, :body)
     end
+
+  # def correct_user
+  #   @recommendation = correct_user.recommendations.find_by(id: params[:id])
+  #   redirect_to login_path if @recommendation.nil?
+  # end
 
 end

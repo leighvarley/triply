@@ -25,22 +25,24 @@ ActiveRecord::Schema.define(version: 20150806220357) do
   create_table "locations", force: :cascade do |t|
     t.string "city_name"
     t.string "state_name"
-    t.string "country_name"
     t.string "location_description"
-    t.string "photo_url"
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.string  "recommended_place"
-    t.string  "body"
-    t.integer "location_id"
-    t.integer "user_id"
+    t.string   "recommended_place"
+    t.string   "body"
+    t.integer  "location_id"
+    t.integer  "user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
+
+  add_index "recommendations", ["location_id"], name: "index_recommendations_on_location_id", using: :btree
+  add_index "recommendations", ["user_id"], name: "index_recommendations_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
@@ -48,4 +50,6 @@ ActiveRecord::Schema.define(version: 20150806220357) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "recommendations", "locations"
+  add_foreign_key "recommendations", "users"
 end
