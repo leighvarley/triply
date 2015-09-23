@@ -4,7 +4,7 @@ class RecommendationsController < ApplicationController
 
 #before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
 
-#before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 #before_action :correct_user, only: [:new, :create, :edit, :update, :destroy]
 
   #index
@@ -64,6 +64,14 @@ class RecommendationsController < ApplicationController
     def recommendation_params
       params.require(:recommendation).permit(:recommended_place, :body)
     end
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
 
   # def correct_user
   #   @recommendation = correct_user.recommendations.find_by(id: params[:id])
