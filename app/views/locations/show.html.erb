@@ -7,10 +7,8 @@
   <p><%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %></p>
 <% end %>
 
-<p><%= link_to "New Recommendation", new_location_recommendation_path(@location, @recommendation), class: "btn btn btn-primary" %></p>
-
-<%# if can? :create, @recommendation %>
-<%#= link_to 'New Recommendation', new_location_recommendation_path(@location), class: "btn btn btn-primary" %>
-<%# end %>
+<% if @user == @logged_in_user %>
+  <p><%= link_to "New Recommendation", new_location_recommendation_path(@location, @recommendation), class: "btn btn btn-primary" %></p>
+<%end%>
 
 <p><%= link_to "Back", :back, class: "btn btn btn-primary" %></p>
