@@ -1,11 +1,6 @@
 class RecommendationsController < ApplicationController
-  #load_and_authorize_resource :location
-  #load_and_authorize_resource :recommendation, :through => :location
-
-#before_action :authenticate, only: [:new, :create, :edit, :update, :destroy]
-
-before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
-#before_action :correct_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   #index
   def index
@@ -22,10 +17,8 @@ before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   #create
   def create
     @location = Location.find(params[:location_id])
-    #save username when recommendation is added
-    @recommendation = @location.recommendations.create!(recommendation_params.merge({
-      user_id: session[:user]["id"]
-      }))
+    @recommendation = @location.recommendations.create!(recommendation_params)
+    @recommendation.update(user: current_user)
     redirect_to location_path(@location)
   end
 
@@ -39,17 +32,24 @@ before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
   def edit
     @recommendation = Recommendation.find(params[:id])
     @location = @recommendation.location
+    @user = @current_user
+     if @user != @recommendation.user
+      redirect_to :back
+      flash[:danger] = "You are not authorized to edit this recommendation"
+   end
   end
 
   #update
   def update
     @recommendation = Recommendation.find(params[:id])
-    # if @recommendation.user_id != current_user.id
-    #   "Yer not authorized!"
-    # else
     @location = Location.find(params[:location_id])
     @recommendation.update(recommendation_params.merge(location: @location))
     redirect_to location_path(@location)
+    @user = @current_user
+      if @user != @recommendation.user
+      redirect_to :back
+      flash[:danger] = "You are not authorized to edit this recommendation"
+    end
   end
 
   #destroy
@@ -65,17 +65,8 @@ before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
       params.require(:recommendation).permit(:recommended_place, :body)
     end
 
-  # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
-
-  # def correct_user
-  #   @recommendation = correct_user.recommendations.find_by(id: params[:id])
-  #   redirect_to login_path if @recommendation.nil?
+  # def current_user
+  #   @current_user = User.find(session[:user]["id"]) if session[:user]
   # end
 
 end
