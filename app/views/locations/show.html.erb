@@ -7,9 +7,9 @@
   <p><%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %></p>
 <% end %>
 
-<% if can? :create, @recommendation %>
-<p><%= link_to 'New Recommendation', new_location_recommendation_path(@location), class: "btn btn btn-primary" %></p>
-<% end %>
+<%# if can? :create, @recommendation %>
+<p><%#= link_to 'New Recommendation', new_location_recommendation_path(@location), class: "btn btn btn-primary" %></p>
+<%# end %>
 
 
 

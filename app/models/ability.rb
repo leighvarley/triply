@@ -1,13 +1,13 @@
-class Ability
-  include CanCan::Ability
-
-  def initialize(user)
-    if user
-      can :manage, :all
-    else
-      can :read, :all
-    end
-  end
+# class Ability
+#   include CanCan::Ability
+#
+#   def initialize(user)
+#     if user
+#       can :manage, :all
+#     else
+#       can :read, :all
+#     end
+#   end
 
 
     # Define abilities for the passed in user here. For example:
