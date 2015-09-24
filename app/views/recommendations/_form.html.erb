@@ -1,17 +1,17 @@
 <%= form_for [@location, @recommendation] do |f| %>
 
-  <p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
     <%= f.label :Place %><br>
-    <%= f.text_field :recommended_place %>
-  </p>
+    <%= f.text_field :recommended_place, :placeholder=> "What's the spot?" %>
 
-  <p>
     <%= f.label :Description %><br>
-    <%= f.text_field :body %>
-  </p>
+    <%= f.text_field :body, :placeholder=> "What's it like?" %>
 
-  <p>
-    <%= f.submit %>
-  </p>
+    <%= f.submit "Save recommendation", class: "btn btn-primary" %>
+  <% end %>
 
-<% end %>
+  <%= link_to "Back", :back, class: "btn btn-primary" %>
+
+  </div>
+</div>

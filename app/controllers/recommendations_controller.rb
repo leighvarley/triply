@@ -16,9 +16,11 @@ class RecommendationsController < ApplicationController
 
   #create
   def create
+    @user = correct_user
     @location = Location.find(params[:location_id])
-    @recommendation = @location.recommendations.create!(recommendation_params)
-    @recommendation.update(user: current_user)
+    @recommendation = @user.location.recommendations.create!(recommendation_params)
+    @recommendation.update
+    # @recommendation.update(user: correct_user)
     redirect_to location_path(@location)
   end
 
@@ -26,13 +28,14 @@ class RecommendationsController < ApplicationController
   def show
     @recommendation = Recommendation.find(params[:id])
     @location = @recommendation.location
+    @user = @recommendation.user
   end
 
   #edit
   def edit
     @recommendation = Recommendation.find(params[:id])
     @location = @recommendation.location
-    @user = @current_user
+    @user = correct_user
      if @user != @recommendation.user
       redirect_to :back
       flash[:danger] = "You are not authorized to edit this recommendation"
@@ -45,7 +48,7 @@ class RecommendationsController < ApplicationController
     @location = Location.find(params[:location_id])
     @recommendation.update(recommendation_params.merge(location: @location))
     redirect_to location_path(@location)
-    @user = @current_user
+    @user = correct_user
       if @user != @recommendation.user
       redirect_to :back
       flash[:danger] = "You are not authorized to edit this recommendation"
@@ -61,12 +64,21 @@ class RecommendationsController < ApplicationController
   end
 
   private
-    def recommendation_params
-      params.require(:recommendation).permit(:recommended_place, :body)
-    end
+  def recommendation_params
+    params.require(:recommendation).permit(:recommended_place, :body)
+  end
 
-  # def current_user
-  #   @current_user = User.find(session[:user]["id"]) if session[:user]
-  # end
+  private
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
+  def correct_user
+    return unless session[:email]
+    @current_user ||= User.find(session[:email])
+  end
 
 end

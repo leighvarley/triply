@@ -3,8 +3,8 @@
 
 /* universal */
 
-$light-gray: #777;
-$gray-medium-light: #eaeaea;
+$dark-gray: #36454F;
+$gray: #626D75;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -12,8 +12,15 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+.navbar {
+  background-color: #1CD3A2;
+  border: 0em;
+}
+
+
+
 body {
-  padding-top: 80px;
+  padding-top: 7em;
 }
 
 section {
@@ -25,51 +32,59 @@ textarea {
 }
 
 .jumbotron {
-  background-color: #C3E5DB;
-}
-
-.center {
+  background-color: #80DAEB;
   text-align: center;
-  h1 {
-    margin-bottom: 10px;
+  h2 {
+    float: center;
+    display: inline-block;
+    width: 70%
   }
 }
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-  font-family: Lucida Grande;
+h1, h2, h3, h4, h5, h6, p, a, label {
+  line-height: 1em;
+  font-family: 'Amatic SC', cursive;
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+  font-size: 4em;
+  margin-bottom: 0.5em;
   text-align: center;
 }
 
 h2 {
-  font-size: 2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
   text-align: center;
-  font-weight: normal;
-  color: $light-gray;
+  color: $gray;
 }
 
-p {
-  font-size: 1.3em;
-  line-height: 1.6em;
-  font-family: Lucida Grande
+h3 {
+  font-size: 2em;
+  text-align: left;
+  color: $gray;
+}
+
+h4 {
+  font-size: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: white;
+}
+
+p, label {
+  font-size: 1.5em;
 }
 
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid $dark-gray;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 1em;
+  font-family: 'Amatic SC', cursive;
   @include box_sizing;
 }
 
@@ -79,10 +94,11 @@ input {
 
 #error_explanation {
   color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
+}
+
+.btn {
+  padding: 0.5em;
+  margin-bottom: 1em;
 }
 
 /* Users index */
@@ -92,59 +108,32 @@ input {
   margin: 0;
   li {
     overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    padding: 1em 0;
+    border-bottom: 0.1em solid #C2C2C2;
   }
 }
 
-/* sidebar */
-
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
-}
+/* gravatar */
 
 .gravatar {
   float: left;
-  margin-right: 10px;
+  margin-right: 0.2em;
 }
 
 .gravatar_edit {
-  margin-top: 15px;
+  margin-top: 1em;
 }
 
 /* footer */
 
 footer {
-  margin-top: 60px;
-  padding-top: 10px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  margin-top: 7em;
+  padding-top: 1em;
+  border-top: 0.1em solid $gray;
   a {
     color: $gray;
     &:hover {
-      color: $gray-darker;
+      color: $dark-gray;
     }
   }
   ul {
@@ -152,7 +141,7 @@ footer {
     list-style: none;
     li {
       float: left;
-      margin-left: 5px;
+      margin-left: 1em;
     }
   }
 }

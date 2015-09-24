@@ -1,10 +1,10 @@
-<div class="center jumbotron">
+<div class="jumbotron">
 <h1><%= @location.city_name %>, <%= @location.state_name %></h1>
-<p><%= @location.location_description %></p>
+<h2><%= @location.location_description %></h2>
 </div>
 
 <% @location.recommendations.each do |recommendation| %>
-  <p><%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %></p>
+  <h3><%= link_to recommendation.recommended_place, location_recommendation_path(@location, recommendation) %></h3>
 <% end %>
 
 <% if @user == @logged_in_user %>

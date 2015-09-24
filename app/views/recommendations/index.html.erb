@@ -3,7 +3,3 @@
 <% @recommendations.each do |recommendation| %>
   <h4><%= link_to "#{recommendation.recommended_place}", recommendation %></h4>
 <% end %>
-
-<%# if can? :create, @recommendation %>
-  <%#= link_to 'new recommendation', new_location_recommendation_path %>
-<%# end %>
