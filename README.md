@@ -11,10 +11,7 @@ As a user I should be able to:
 -delete a specific recommendation that I created
 
 
-Project two:
-For project two, I will create users and allow them to log in and to create, read, update and delete recommendations. I will add comments if I have time.
-
-Eventually, I would like to create a social network for travellers where users can create profiles and connect with their frinds and family to share travel advice. I would also like to create features that allow users to share photos, tag their recommendations, store trip itenaries, and more.
+Eventually, I would like to expand this project into a social network for travelers where users can create profiles and connect with their friends and family to share travel advice. I would also like to create features that allow users to share photos, tag their recommendations, store trip itineraries, comment on exiting recommendations, and more.
 
 
 ERD: https://www.lucidchart.com/documents/edit/d337d0f1-a5dc-4e20-ad86-8a1dff117b00
