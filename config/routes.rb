@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root                'welcome#index'
   get    'contact' => 'welcome#contact'
-  get    'about' => 'welcome#about'
+  get    'about'   => 'welcome#about'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

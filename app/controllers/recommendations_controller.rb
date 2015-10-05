@@ -16,9 +16,9 @@ class RecommendationsController < ApplicationController
 
   #create
   def create
-    @user = correct_user
+    # @user = correct_user
     @location = Location.find(params[:location_id])
-    @recommendation = @user.location.recommendations.create!(recommendation_params)
+    @recommendation = @location.recommendations.create!(recommendation_params)
     @recommendation.update
     # @recommendation.update(user: correct_user)
     redirect_to location_path(@location)
