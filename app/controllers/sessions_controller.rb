@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
   #logging in creates a session (post request to create action)
   def create
+    #pull user out of db using the submitted email addess.
     #params[:session][:email] is the submitted email
     user = User.find_by(email: params[:session][:email].downcase)
     #&& statement determines whether or not user is valid by comparing what is entered in the form with the database to see if there is a match
