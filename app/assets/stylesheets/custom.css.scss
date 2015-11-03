@@ -41,9 +41,14 @@ textarea {
 
 /* typography */
 
-h1, h2, h3, h4, h5, h6, p, li, label {
+h1, h2, h3, h4, h5, h6, li, label, a {
   line-height: 1em;
   font-family: 'Amatic SC', cursive;
+}
+
+p {
+  line-height: 1em;
+  font-family: 'Pompiere';
 }
 
 h1 {
@@ -76,7 +81,7 @@ h4 {
 }
 
 p, label {
-  font-size: 1.75em;
+  font-size: 1.5em;
     & a:hover{
     font-size: 2em;
     }
