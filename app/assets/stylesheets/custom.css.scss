@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, li, label, a {
 }
 
 p {
-  line-height: 1em;
+  line-height: 1.5em;
   font-family: 'Pompiere';
 }
 
@@ -81,13 +81,13 @@ h4 {
 }
 
 p, label {
-  font-size: 1.5em;
+  font-size: 1.6em;
     & a:hover{
     font-size: 2em;
     }
 }
 
-li {
+nav ul li {
   font-color: white;
   font-size: 2em;
     & a:hover{
@@ -103,6 +103,7 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 1em;
   font-family: 'Amatic SC', cursive;
   @include box_sizing;
+  font-size: 1.6em;
 }
 
 input {
@@ -115,7 +116,6 @@ input {
 
 .btn {
   font-size: 1em;
-  // padding: 0.5em;
   margin-bottom: 0.3em;
 }
 
